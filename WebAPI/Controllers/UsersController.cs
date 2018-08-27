@@ -10,7 +10,7 @@ namespace WebAPI.Controllers
 {
     [Produces("application/json")]
     [Route("api/Users")]
-    public class UsersController : Controller
+    public class UsersController : BaseController
     {
         public User UserModel { get; set; }
 
