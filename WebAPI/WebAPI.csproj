@@ -21,5 +21,6 @@
 
   <ItemGroup>
     <Compile Remove="Models\IUserModel.cs" />
+    <Compile Remove="Models\IUserModel.cs" />
   </ItemGroup>
 </Project>
