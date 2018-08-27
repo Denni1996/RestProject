@@ -12,12 +12,42 @@ namespace WebAPI.Controllers
     [Route("api/Users")]
     public class UsersController : Controller
     {
-        
+        public User UserModel { get; set; }
 
-
-        public List<User> Get()
+        public UsersController(User userModel)
         {
-            return null;
+            this.UserModel = userModel;
+        }
+
+        public ActionResult Get()
+        {
+            return Ok(UserModel.Get());
+        }
+
+        public ActionResult Get(int id)
+        {
+            return Ok(UserModel.Get(id));
+        }
+
+        [HttpDelete]
+        public ActionResult Delete([FromBody]User user)
+        {
+            UserModel.Delete(user);
+            return Ok();
+        }
+
+        [HttpPost]
+        public ActionResult Create([FromBody]User user)
+        {
+            UserModel.Create(user);
+            return Ok();
+        }
+
+        [HttpPut]
+        public ActionResult Post([FromBody]User user)
+        {
+            UserModel.Update(user);
+            return Ok();
         }
     }
 }
